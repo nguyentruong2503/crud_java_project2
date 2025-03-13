@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: LENOVO
+Build-Jdk: 21.0.5
+Implementation-Title: spring-boot-non-jwt
+Implementation-Version: 1.0
+Implementation-Vendor-Id: com.truongnq
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-boot
+ -starter-parent/spring-boot-non-jwt
+Created-By: Maven Integration for Eclipse
+
