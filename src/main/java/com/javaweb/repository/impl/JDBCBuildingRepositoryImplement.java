@@ -19,7 +19,7 @@ import com.javaweb.utils.NumberUtil;
 import com.javaweb.utils.StringUtil;
 
 @Repository
-public class BuildingRepositoryImplement implements BuildingRepository {
+public class JDBCBuildingRepositoryImplement implements BuildingRepository {
 	
 	//Join các bảng cần thiết
 	public static void joinTable(BuildingSearchBuilder buildingSearchBuilder, StringBuilder sql) {
@@ -133,15 +133,14 @@ public class BuildingRepositoryImplement implements BuildingRepository {
 			    buildingEntity.setId(rs.getLong("b.id"));
 			    buildingEntity.setName(rs.getString("b.name"));
 			    buildingEntity.setWard(rs.getString("b.ward"));
-			    buildingEntity.setDistrictid(rs.getLong("b.districtid"));
 			    buildingEntity.setStreet(rs.getString("b.street"));
-			    buildingEntity.setNumberOfBasement(rs.getInt("b.numberofbasement"));
-			    buildingEntity.setFloorArea(rs.getLong("b.floorarea"));
-			    buildingEntity.setRentPrice(rs.getLong("b.rentprice"));
-			    buildingEntity.setServiceFee(rs.getString("b.servicefee"));
-			    buildingEntity.setBrokerageFee(rs.getLong("b.brokeragefee"));
-			    buildingEntity.setManagerName(rs.getString("b.managername"));
-			    buildingEntity.setManagerPhoneNumber(rs.getString("b.managerphonenumber"));
+			    buildingEntity.setNumberofbasement(rs.getInt("b.numberofbasement"));
+			    buildingEntity.setFloorarea(rs.getLong("b.floorarea"));
+			    buildingEntity.setRentprice(rs.getLong("b.rentprice"));
+			    buildingEntity.setServicefee(rs.getString("b.servicefee"));
+			    buildingEntity.setBrokeragefee(rs.getLong("b.brokeragefee"));
+			    buildingEntity.setManagername(rs.getString("b.managername"));
+			    buildingEntity.setManagerphonenumber(rs.getString("b.managerphonenumber"));
 			    result.add(buildingEntity);
 			}
 
