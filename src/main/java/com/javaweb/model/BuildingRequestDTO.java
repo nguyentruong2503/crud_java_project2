@@ -1,6 +1,13 @@
 package com.javaweb.model;
 
 public class BuildingRequestDTO {
+	private Long id;
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
 	private String name;
 	private String street;
 	private String ward;

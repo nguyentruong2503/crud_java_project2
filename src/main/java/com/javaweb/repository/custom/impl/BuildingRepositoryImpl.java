@@ -1,4 +1,4 @@
-package com.javaweb.repository.impl;
+package com.javaweb.repository.custom.impl;
 
 import java.lang.reflect.Field;
 import java.util.List;
@@ -17,7 +17,7 @@ import com.javaweb.repository.entity.BuildingEntity;
 
 @Repository
 @Primary
-public class BuildingRepositoryImpl implements BuildingRepository {
+public class BuildingRepositoryImpl implements BuildingRepositoryCustom  {
 
 	@PersistenceContext
 	private EntityManager entityManager;

@@ -1,4 +1,4 @@
-package com.javaweb.repository.impl;
+package com.javaweb.repository.custom.impl;
 
 import java.lang.reflect.Field;
 import java.sql.Connection;
@@ -19,7 +19,7 @@ import com.javaweb.utils.NumberUtil;
 import com.javaweb.utils.StringUtil;
 
 @Repository
-public class JDBCBuildingRepositoryImplement implements BuildingRepository {
+public class JDBCBuildingRepositoryImplement  {
 	
 	//Join các bảng cần thiết
 	public static void joinTable(BuildingSearchBuilder buildingSearchBuilder, StringBuilder sql) {
@@ -112,7 +112,7 @@ public class JDBCBuildingRepositoryImplement implements BuildingRepository {
 		}
 	}
 	
-	@Override
+//	@Override
 	public List<BuildingEntity> findAll(BuildingSearchBuilder buildingSearchBuilder) {
 		StringBuilder sql = new StringBuilder("SELECT distinct b.id, b.name, b.districtid, b.street, b.ward, b.numberofbasement, \r\n"
 				+ "       b.floorarea, b.rentprice, b.managername, b.managerphonenumber, \r\n"

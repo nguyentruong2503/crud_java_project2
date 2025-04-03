@@ -3,7 +3,6 @@ package com.javaweb.service.impl;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,11 +12,7 @@ import com.javaweb.converter.BuildingDTOConverter;
 import com.javaweb.converter.BuildingSearchBuilderConverter;
 import com.javaweb.model.BuildingDTO;
 import com.javaweb.repository.BuildingRepository;
-import com.javaweb.repository.DistrictRepository;
-import com.javaweb.repository.RentAreaRepository;
 import com.javaweb.repository.entity.BuildingEntity;
-import com.javaweb.repository.entity.DistrictEntity;
-import com.javaweb.repository.entity.RentAreaEntity;
 import com.javaweb.service.BuildingService;
 
 @Service
@@ -36,6 +31,7 @@ public class BuildingServiceImplement implements BuildingService {
 		// TODO Auto-generated method stub
 		BuildingSearchBuilder buildingSearchBuilder = buildingSearchBuilderConverter.toBuildingSearchBuilder(params, typeCode);
 		List<BuildingEntity> buildingEntities = buildingRepository.findAll(buildingSearchBuilder);
+		//BuildingEntity buildingEntities = buildingRepository.findById(1L).get();
 		List<BuildingDTO> result = new ArrayList<BuildingDTO>();
 		for(BuildingEntity item : buildingEntities) {
 			BuildingDTO building = buildingDTOConverter.toBuildingDTO(item);
@@ -44,5 +40,14 @@ public class BuildingServiceImplement implements BuildingService {
 		
 		return result;
 	}
+	@Override
+	public BuildingDTO findById(Long id) {
+		// TODO Auto-generated method stub
+		BuildingEntity buildingEntity = buildingRepository.findById(id).get();
+		
+		return buildingDTOConverter.toBuildingDTO(buildingEntity);
+	}
+	
+	
 	
 }
